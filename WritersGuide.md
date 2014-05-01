@@ -2,8 +2,7 @@ New Writers Guide
 ===
 Timothy Boronczyk
 
-    "A writer is a person for whom writing is more difficult than it is for most people."
-    - Thomas Mann
+*A writer is a person for whom writing is more difficult than it is for most people.* - Thomas Mann
 
 Writing is a fun way to share your knowledge, experience, and opinions with others, and it can also be very rewarding. Writing about a topic that's new to you may help solidify your own understanding of it (or your friendly editor may point out an easier way of doing something you didn't know before) and make you a better programmer. Or, writing may serve as an avenue for you to become more involved in the community; writing successful articles and blog posts can give you confidence to submit and present a talk at any number of professional conferences held around the world. No one knows exactly what the future brings, but the skills you cultivate and the friendships you form through writing have the potential to open up many opportunities.
 
@@ -13,8 +12,7 @@ With all of this in mind, this document was prepared to help minimize the frustr
 
 Finding Inspiration
 ---
-    "You can't wait for inspiration, you have to go after it with a club."
-    - Jack London
+*You can't wait for inspiration, you have to go after it with a club.* - Jack London
 
 There will be times when you have the urge to write but you're not sure of exactly what to write; indeed, coming up with a good topic can be challenging. Here's a little secret, though... inspiration is everywhere.
 
@@ -26,8 +24,7 @@ If you find yourself in a real bind, there's always the option of asking others 
 
 Before You Begin...
 ---
-    "By failing to prepare, you are preparing to fail."
-    - Benjamin Franklin
+*By failing to prepare, you are preparing to fail.* - Benjamin Franklin
 
 Some authors prepare an outline to organize their thoughts before writing, and others write from the pen with only a vague idea beforehand of what they want to discuss and in what order its elements will be presented. You don't necessarily need a formal outline enumerating each talking point, but you should have some plan of attack before you start writing. Writing blindly is never a good idea.
 
@@ -54,8 +51,7 @@ It's important to first have an understanding of the architecture related to mid
 
 The Essay Structure
 ---
-    "The skill of writing is to create a context in which other people can think."
-    - Edwin Schlossberg
+*The skill of writing is to create a context in which other people can think.* - Edwin Schlossberg
 
 The standard essay-structure is often a good device to employ when you first start writing articles since it's especially well suited to tutorials and how-to articles. The essay contains an introduction, a detailed body, and a summary or conclusion. You can experiment structuring your articles in different ways as you grow and gain confidence in your abilities as a writer, but the essay-structure is tried and true.
 
@@ -134,8 +130,7 @@ The example confirms the promise I made in the introduction (to impart the knowl
 
 Developing Your Writing Style
 ---
-    "Borrowed thoughts, like borrowed money, only show the poverty of the borrower."
-    - Lady Marguerite Blessington
+*Borrowed thoughts, like borrowed money, only show the poverty of the borrower.* - Lady Marguerite Blessington
 
 All authors come to develop a style, a "voice", that is distinctly their own. As you develop yours, keep in mind that understanding technical concepts can be hard enough as it is so it's best to use simple language; it's easier to read and understand than flourishy prose. 
 
@@ -177,8 +172,7 @@ For more information on plagiarism, visit [plagiarism.org/plag_article_plagiaris
 
 Working with your Editor
 ---
-    "To write well, express yourself like the common people but think like a wise man."
-    - Aristotle
+*To write well, express yourself like the common people but think like a wise man.* - Aristotle
 
 Your editor is your primary contact and advocate so never be afraid to ask him questions if you don't understand something. He is responsible for managing authors and ensuring published articles are clear, correct, concise, complete, and consistent. It's the editor's job to ensure all submissions meet a level of quality before publication. If your article doesn't meet your editor's expectations then he'll send it back to you with changes and constructive feedback to help you improve it.
 
@@ -195,8 +189,7 @@ Remember to return the courtesy.
 
 Additional Advice
 ---
-    "We are all apprentices in a craft where no one ever becomes a master."
-    - Ernest Hemingway
+*We are all apprentices in a craft where no one ever becomes a master.* - Ernest Hemingway
 
 Following a tried and true writing structure and corresponding with your editor can sometimes be the easiest of part writing; the biggest challenge for an author can be to overcome self-doubt. Have you ever said to yourself any of the following?
 
@@ -223,8 +216,7 @@ If you have an idea for an article that you would like to read but you genuinely
 
 In Closing
 ---
-    "Put it before them briefly so they will read it, clearly so they will appreciate it, picturesquely so they will remember it, and, above all, accurately so they will be guided by its light."
-    - Joseph Pulitzer
+*Put it before them briefly so they will read it, clearly so they will appreciate it, picturesquely so they will remember it, and, above all, accurately so they will be guided by its light.* - Joseph Pulitzer
 
 Writing is supposed to be fun and rewarding. These guidelines offer you a way to minimize some of the frustration that authors often experience when writing. You've learned about the essay-structure and how it offers you a framework in which to organize your content in an accessible manner, how to foster and maintain a positive working relationship with your editor, and a handful of ways to encourage yourself when filled with self-doubt.
 
