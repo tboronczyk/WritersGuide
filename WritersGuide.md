@@ -79,8 +79,26 @@ And finally, the purpose of the article should be clearly stated. This is your p
 
 Here's an example of an introduction:
 
-    Comparison shopping is nothing new but has become infinitely easier since the advent of the Internet. Major sites like Nextag and shopzilla let consumers find the best price on any number of products with just a few mouse clicks. Recently, I was tasked with implementing a similar concept as part of a client's web application; it needed to connect to several different APIs to obtain price lists and the best price would be cached in a database. It was then when I learned about Scatter-Gather, an enterprise integration pattern which routes a request to a number of recipients and then collects and distills the responses into a single response. The client system would initiate requests to various vendors and the responses would be funneled to a collector process to determine the lowest price.
-    While understanding the pattern was easy for me, I encountered a few unexpected issues while implementing it. In this two-part series I'll share with you what I've learned so that, hopefully, you can avoid the same mistakes I made. In this part you'll learn how to identify when the Scatter-Gather pattern is appropriate and when it's not, and how you can implement it with a minimal amount of fuss with Apache Camel. In Part 2 I'll teach you the key things you'll need to know to scale your solution successfully.
+    Comparison shopping is nothing new but has become infinitely easier since 
+    the advent of the Internet. Major sites like Nextag and shopzilla let 
+    consumers find the best price on any number of products with just a few 
+    mouse clicks. Recently, I was tasked with implementing a similar concept 
+    as part of a client's web application; it needed to connect to several 
+    different APIs to obtain price lists and the best price would be cached in 
+    a database. It was then when I learned about Scatter-Gather, an enterprise 
+    integration pattern which routes a request to a number of recipients and 
+    then collects and distills the responses into a single response. The 
+    client system would initiate requests to various vendors and the responses 
+    would be funneled to a collector process to determine the lowest price.
+    
+    While understanding the pattern was easy for me, I encountered a few 
+    unexpected issues while implementing it. In this two-part series I'll 
+    share with you what I've learned so that, hopefully, you can avoid the 
+    same mistakes I made. In this part you'll learn how to identify when the 
+    Scatter-Gather pattern is appropriate and when it's not, and how you can 
+    implement it with a minimal amount of fuss with Apache Camel. In Part 2 
+    I'll teach you the key things you'll need to know to scale your solution 
+    successfully.
 
 Try to identify each of the key ingredients in the example introduction. How does the author try to draw the reader into the article? What is the main concept? Is it clear what the purpose of the article is?
 
@@ -99,29 +117,43 @@ When providing code examples in your article, it's also preferable that you firs
 Here's an excerpt from the article to illustrate this:
 
     SCALING THE WATERMARK
-    [...] While this approach is fine if you know the size of the original images beforehand since you can create the watermark with the appropriate dimensions, you might want a more robust approach in case the sizes of the original images vary. Such an approach might be to place the watermark in the center of the image and scaling the watermark beforehand if it is larger than the original image.
 
-    <?php
-    // how big are the images?
-    $iWidth = $image->getImageWidth();
-    $iHeight = $image->getImageHeight();
-    $wWidth = $watermark->getImageWidth();
-    $wHeight = $watermark->getImageHeight();
-    if ($iHeight < $wHeight || $iWidth < $wWidth) {
-        // resize the watermark
-        $watermark->scaleImage($iWidth, $iHeight);
-        // get new size
+    [...] While this approach is fine if you know the size of the original 
+    images beforehand since you can create the watermark with the appropriate 
+    dimensions, you might want a more robust approach in case the sizes of the 
+    original images vary. Such an approach might be to place the watermark in 
+    the center of the image and scaling the watermark beforehand if it is 
+    larger than the original image.
+
+        <?php
+        // how big are the images?
+        $iWidth = $image->getImageWidth();
+        $iHeight = $image->getImageHeight();
         $wWidth = $watermark->getImageWidth();
         $wHeight = $watermark->getImageHeight();
-    }
-    // calculate the position
-    $x = ($iWidth - $wWidth) / 2;
-    $y = ($iHeight - $wHeight) / 2;
-    $image->compositeImage($watermark, imagick::COMPOSITE_OVER, $x, $y);
+        if ($iHeight < $wHeight || $iWidth < $wWidth) {
+            // resize the watermark
+            $watermark->scaleImage($iWidth, $iHeight);
+            // get new size
+            $wWidth = $watermark->getImageWidth();
+            $wHeight = $watermark->getImageHeight();
+        }
+        // calculate the position
+        $x = ($iWidth - $wWidth) / 2;
+        $y = ($iHeight - $wHeight) / 2;
+        $image->compositeImage($watermark, imagick::COMPOSITE_OVER, $x, $y);
 
-    The getImageWidth() and getImageHeight() methods return the width and height of an image respectively, measured in pixels. By comparing the width and height of the watermark image to those of the original image, you can determine whether or not it is necessary to resize the watermark so it will fit on smaller images.
+    The getImageWidth() and getImageHeight() methods return the width and 
+    height of an image respectively, measured in pixels. By comparing the 
+    width and height of the watermark image to those of the original image, 
+    you can determine whether or not it is necessary to resize the watermark 
+    so it will fit on smaller images.
 
-    Resizing the watermark is accomplished by calling the scaleImage() method which takes an allowed width and height. The method will scale the image down so that the maximum width is no larger than the allowed width, and the maximum height is no larger than the allowed height, while maintaining the image's aspect ratio.
+    Resizing the watermark is accomplished by calling the scaleImage() method 
+    which takes an allowed width and height. The method will scale the image 
+    down so that the maximum width is no larger than the allowed width, and 
+    the maximum height is no larger than the allowed height, while maintaining 
+    the image's aspect ratio.
 
 This example is a section with the header "Scaling the Watermark." The paragraph prior to the code sample explains what functionality is needed – the code should be able to watermark images that are not of a predetermined size. The code is then presented which demonstrates how to scale the watermark based on the size of a target image and positions the watermark in its center. The two paragraphs that follow then explain the salient parts of the code.
 
@@ -133,7 +165,14 @@ Just as a good host invites his guests in at his door and then later sends them 
 
 My article [Migrate from the MySQL Extension to PDO](http://www.sitepoint.com/migrate-from-the-mysql-extension-to-pdo) teaches the basics of updating PHP code which uses the older mysql extension with PDO instead. Here's its conclusion:
 
-    Now you have the basic knowledge necessary to start migrating from the older MySQL extension to the newer PDO extension. You've seen that while most of the time PDO is already available, it's easy to set up if for some reason it isn't. You've also seen how easy it is to connect to a MySQL database server, issue queries, and receive the results. Of course this was just a practical overview; to learn more about what PDO has to offer and how you can take advantage of it, I encourage you to read the available documentation at php.net.
+    Now you have the basic knowledge necessary to start migrating from the 
+    older MySQL extension to the newer PDO extension. You've seen that while 
+    most of the time PDO is already available, it's easy to set up if for some 
+    reason it isn't. You've also seen how easy it is to connect to a MySQL 
+    database server, issue queries, and receive the results. Of course this 
+    was just a practical overview; to learn more about what PDO has to offer 
+    and how you can take advantage of it, I encourage you to read the 
+    available documentation at php.net.
 
 The example confirms the promise I made in the introduction (to impart the knowledge necessary to start using PDO) was satisfied in the article's body. It then reiterates the concepts that were discussed and offers the official documentation as a source of additional information for those who want to learn more.
 
@@ -149,11 +188,17 @@ All authors come to develop a style, a "voice", that is distinctly their own. As
 Understanding technical concepts can be hard enough as it is, so it's best to use simple language when writing because it's easier to read and understand than flourishy prose. 
 Here's an example that's overly prosaic, adapted from [Flexible View Manipulation, Part 2 – Using Decorators](http://www.sitepoint.com/flexible-view-manipulation-2) by Alejandro Gervasio:
 
-    For years we've been so busy parroting here and there about the heaps of virtues and drawbacks exposed by the model/controller tandem that this never-ending verbiage of nerdy gossip made us unintentionally bastardize the role of views, downgrading it to the level of just a clunky HTML template.
+    For years we've been so busy parroting here and there about the heaps of 
+    virtues and drawbacks exposed by the model/controller tandem that this 
+    never-ending verbiage of nerdy gossip made us unintentionally bastardize 
+    the role of views, downgrading it to the level of just a clunky HTML 
+    template.
 
 The above can be rewritten with most of the exaggerated verbiage removed. The phrase "parroting here and there" can be replaced with "discussing", the descriptive "heaps" is unnecessary, etc.
 
-    For years we've been so busy discussing the virtues and drawbacks of the model/controller tandem that we've overlooked the role of views, denigrating them to the level of clunky HTML templates.
+    For years we've been so busy discussing the virtues and drawbacks of the 
+    model/controller tandem that we've overlooked the role of views, 
+    denigrating them to the level of clunky HTML templates.
 
 The revision is clearly more readable and still retains the essence the author intended.
 
@@ -169,15 +214,30 @@ Plagiarism is including the work of others in yours and passing it off as your o
 
 Here's an example I've constructed using an excerpt from Callum Hopkins' article, [Why You Should Use Bcrypt to Hash Stored Passwords](http://www.sitepoint.com/why-you-should-use-bcrypt-to-hash-stored-passwords): 
 
-    Bcrypt is incredibly slow to hash input compared to other functions. How much slower is Bcrypt than, say, MD5? Using a work factor of 12, Bcrypt hashes the password "yaaa" in about 0.3 seconds on my laptop. MD5 on the other hand takes less than a microsecond. Don't think Bcrypt sounds like it would be too slow to use, though. You can set how large you want the cost of your hashing to be. This means you can sacrifice time and go for all-out-security by using a huge Key Factor, or you can use a minimum Key Factor and reduce the time it takes to hash the input value.
+    Bcrypt is incredibly slow to hash input compared to other functions. How 
+    much slower is Bcrypt than, say, MD5? Using a work factor of 12, Bcrypt 
+    hashes the password "yaaa" in about 0.3 seconds on my laptop. MD5 on the 
+    other hand takes less than a microsecond. Don't think Bcrypt sounds like 
+    it would be too slow to use, though. You can set how large you want the 
+    cost of your hashing to be. This means you can sacrifice time and go for 
+    all-out-security by using a huge Key Factor, or you can use a minimum Key 
+    Factor and reduce the time it takes to hash the input value.
 
 And here's the real excerpt showing proper attribution:
 
-    Bcrypt is incredibly slow to hash input compared to other functions.  Consider this quote from Coda Hale's article How to Safely Store a Password (bit.ly/dlRWpc):
+    Bcrypt is incredibly slow to hash input compared to other functions.  
+    Consider this quote from Coda Hale's article How to Safely Store a 
+    Password (bit.ly/dlRWpc):
 
-    > How much slower is Bcrypt than, say, MD5? Using a work factor of 12, Bcrypt hashes the password "yaaa" in about 0.3 seconds on my laptop. MD5 on the other hand takes less than a microsecond.
+    > How much slower is Bcrypt than, say, MD5? Using a work factor of 12, 
+    Bcrypt hashes the password "yaaa" in about 0.3 seconds on my laptop. MD5 
+    on the other hand takes less than a microsecond.
 
-    Don't think Bcrypt sounds like it would be too slow to use, though. You can set how large you want the cost of your hashing to be. This means you can sacrifice time and go for all-out-security by using a huge Key Factor, or you can use a minimum Key Factor and reduce the time it takes to hash the input value.
+    Don't think Bcrypt sounds like it would be too slow to use, though. You 
+    can set how large you want the cost of your hashing to be. This means you 
+    can sacrifice time and go for all-out-security by using a huge Key Factor, 
+    or you can use a minimum Key Factor and reduce the time it takes to hash 
+    the input value.
 
 Proper citation lets readers know what are your words and what are the words of another. Giving credit where credit is due is not only fair, but it also makes sure that your unique voice is heard and not the voice of another.
 
